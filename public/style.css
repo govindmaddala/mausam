@@ -1,0 +1,9 @@
+body {
+  background-color: rgb(153, 213, 248);
+  text-align: center;
+  margin-top: 30%;
+}
+
+#city {
+  color: brown;
+}
