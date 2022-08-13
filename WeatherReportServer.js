@@ -18,7 +18,10 @@ app.post('/', function (req, res) {
         response.on("data", function (data) {
             const weather = JSON.parse(data);
             const temp = weather.main.temp;
-            res.send('<h2 style="background-color: #E4E9FD; background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%); min-height: 1000px; text-align:center;">Temperature of ' + city + " is " + temp + "℃ </h2>");
+            // res.send('<h2 style="background-color: #E4E9FD; background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%); height:824px; text-align:center;">Temperature of ' + city + " is " + temp + "℃ </h2>");
+
+
+            res.send('<img src="https://assets.cntraveller.in/photos/62a6e04725a409c7e0f2d254/16:9/w_1024%2Cc_limit/weather-story-june.jpg" alt="Bg" style="width:100%;"> <div class="centered"> Temperature of '+city + " is "+ temp + "℃ </div>");
         })
     })
 })
