@@ -18,8 +18,9 @@ app.post('/', function (req, res) {
         response.on("data", function (data) {
             const weather = JSON.parse(data);
             const temp = weather.main.temp
-            res.send("<h2 style='margin:30%; background-color: rgb(153, 213, 248);'>Temperature of " + city + " is " + temp + "℃ </h2>");
-            //res.send();
+            res.write('<img src="./pleasant climate.jpg" alt="pleasant climate" style="height:824px; width: 1536px;">');
+            res.write("<h2 style='margin:30%; background-color: rgb(153, 213, 248);'>Temperature of " + city + " is " + temp + "℃ </h2>");
+            res.send();
         })
     })
 })
