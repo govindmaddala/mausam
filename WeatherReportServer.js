@@ -18,7 +18,7 @@ app.post('/', function (req, res) {
         response.on("data", function (data) {
             const weather = JSON.parse(data);
             const temp = weather.main.temp;
-            res.send('<h2 style="background-image: url(\'https://www.weather.gov/images/lub/events/2017/20170412-storms/burgett-arcus%20cloud%20near%20Whitharrel.jpg\'); text-align: center; width: 1536px;height: 824;background-attachment: fixed;color: #c7d208;">Temperature of '+city + " is "+ temp + "℃ </h2>");
+            res.send('<h2 style="background-image: url(\'https://www.weather.gov/images/lub/events/2017/20170412-storms/burgett-arcus%20cloud%20near%20Whitharrel.jpg\'); text-align: center; width: 1536px;height: 824;background-attachment: fixed;color: #d61f04;">Temperature of '+city + " is "+ temp + "℃ </h2>");
         })
     })
 })
