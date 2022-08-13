@@ -18,7 +18,7 @@ app.post('/', function (req, res) {
         response.on("data", function (data) {
             const weather = JSON.parse(data);
             const temp = weather.main.temp
-            res.send("<h2 style='margin:30%; background-color: rgb(153, 213, 248); background: url('https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') background-size: 1536px 824px;'>Temperature of " + city + " is " + temp + "℃ </h2>");
+            res.send("<h2 style='margin:30%; background-color: rgb(153, 213, 248); background: url('https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: 1536px 824px;'>Temperature of " + city + " is " + temp + "℃ </h2>");
             // res.send();
             
         })
