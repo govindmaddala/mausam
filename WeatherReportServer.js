@@ -18,7 +18,7 @@ app.post('/', function (req, res) {
         response.on("data", function (data) {
             const weather = JSON.parse(data);
             const temp = weather.main.temp;
-            res.send('<h2 style="background-image: url(\"./pleasant climate.jpg\");background-repeat: no-repeat;background-attachment:fixed;">Temperature of ' + city + " is " + temp + "℃ </h2>");
+            res.send('<h2 style="background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);">Temperature of ' + city + " is " + temp + "℃ </h2>");
 
 
             // res.send();
