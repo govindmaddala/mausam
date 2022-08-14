@@ -16,7 +16,6 @@ app.post('/', function (req, res) {
     http.get(url, function (response) {
         response.on("data", function (data) {
             const weather = JSON.parse(data);
-            console.log(weather);
             const temp = weather.main.temp;
             var sunrise = weather.sys.sunrise;
             sunrise = +sunrise;
@@ -36,9 +35,15 @@ app.post('/', function (req, res) {
             res.write('<html>')
             res.write('<link type="text/css" href="css/style.css" rel="stylesheet">')
             res.write('<link type="text/css" href="css/bootstrap-5.2.0-dist/css/bootstrap.css" rel="stylesheet">');
-            res.write('<body style="background-color:black;">');
+            res.write('<link type="text/css" href="css/bootstrap-5.2.0-dist/css/bootstrap.css" rel="stylesheet">');
+            res.write('<link rel="preconnect" href="https://fonts.googleapis.com">');
+            res.write('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
+            res.write('<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">');
+            res.write('<body style="background-color:black; font-family: "Libre Baskerville",Regular 400 Italic;>');
             res.write('<h2 class="op">Temperature of ' + city + " is " + temp + " Centigrade </h2>");
             res.write('<h2 class="op">'+currentday+"</h2>");
+            res.write('<h2 class="misc"> Weather: '+weather.weather[0].main+"</h2>");
+            res.write('<h2 class="misc"> Weather Description: '+weather.weather[0].description+"</h2>");
             res.write('<div class="row">')
             res.write('<div class="col-lg-6">feels_like: ' + weather.main.feels_like + " Centigrade </div>");
             res.write('<div class="col-lg-6">Humidity: ' + weather.main.humidity + " % </div>");

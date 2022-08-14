@@ -11,6 +11,11 @@ body {
   color: #d61f04;
 }
 
+.misc{
+  text-align: center; 
+  color: #efedf7;
+}
+
 .col-lg-6 {
   position: relative;
   top: 50px;
