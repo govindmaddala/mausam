@@ -18,17 +18,22 @@ app.get('/contacts', (req, res) => {
     res.send('Contacts Page')
 })
 
+const err = {
+    "cod": "404",
+    "message": "city not found"
+}
+
 app.post('/', function (req, res) {
     const city = req.body.cityName;
-    if (city != "") {
-        const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=a80e09962afb6bcde440998015cb5721&units=metric";
-        http.get(url, function (response) {
-            response.on("data", function (data) {
-                const weather = JSON.parse(data);
+    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=a80e09962afb6bcde440998015cb5721&units=metric";
+    http.get(url, function (response) {
+        response.on("data", function (data) {
+            const weather = JSON.parse(data);
+            var date = new Date();
+            var options = { weekday: "long", day: "numeric", month: "long" }
+            var currentday = date.toLocaleDateString("en-US", options);
+            if (weather.cod === 200) {
                 const temp = weather.main.temp;
-                var date = new Date();
-                var options = { weekday: "long", day: "numeric", month: "long" }
-                var currentday = date.toLocaleDateString("en-US", options);
                 res.render("WeatherResp", {
                     City: city,
                     todayTemp: temp,
@@ -40,11 +45,14 @@ app.post('/', function (req, res) {
                     temp_min: weather.main.temp_min,
                     temp_max: weather.main.temp_max
                 })
-            })
+            }
+            else if(weather.cod >= 400){
+                res.render("ErrorPage")
+            }
+            else {
+                res.redirect('/');
+            }
         })
-    }
-    else{
-        res.redirect('/');
-    }
+    })
 })
 app.listen(process.env.PORT || 3000);
