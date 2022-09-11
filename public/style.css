@@ -1,0 +1,100 @@
+body {
+  text-align: center;
+  background-image: url('Images/wallpaperflare.com_wallpaper.jpg');
+  animation: marquee 30s infinite linear;
+  background-repeat: repeat;
+  background-size: cover;
+  font-family:cursive;
+  color:white;
+  height: 100vh;
+  background-color: rgba(240, 255, 255, 0.223);
+}
+
+@keyframes marquee {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -1190px;
+  }
+}
+
+.logo {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+}
+
+.nav-link{
+  color: white !important;
+}
+
+.navbar-toggler{
+  background-color: rgba(255, 255, 255, 0.582) !important;
+}
+
+.body-container{
+  border: 2px solid rgba(10, 160, 247, 0.81);
+  margin-top: 120px !important;
+  margin: auto;
+  padding: 50px 10px 30px 20px;
+}
+
+@media(min-width:900px){
+  .body-container{
+    width: 35vw;
+  }
+  .marquee-top-box,.marquee-bottom-box{
+    width: 70%;
+    margin: auto;
+  }
+}
+
+@media(max-width:900px){
+  .marquee-top-box,.marquee-bottom-box{
+    width: 60%;
+    margin: auto;
+  }
+}
+
+.input-box{
+  border: 0px !important;
+  background-color: transparent;
+  font-size: 25px;
+  height: 50px;
+  margin-left: -59px;
+  margin-top: -50px;
+}
+
+.input-box::placeholder{
+  color: rgba(255, 255, 255, 0.673);
+  font-size: 25px;
+}
+
+.input-box:focus{
+  outline: none;
+  border-bottom: 2px solid white !important;
+  color: white !important;
+}
+
+#submit-button{
+  border-radius: 10px;
+  margin-left: -160px;
+  padding: 10px 20px;
+  margin-top: -10px;
+  color: white !important;
+}
+
+.mood{
+  color: rgb(234, 247, 58);
+}
+
+.city-name,.today-date {
+  margin-top: 50px;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.weather-report {
+  text-align: center;
+}

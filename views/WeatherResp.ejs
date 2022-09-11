@@ -1,0 +1,26 @@
+<%-include("Header")-%>
+    <h2 class="city-name">Temperature of <u class="city-name">
+            <%=City%>
+        </u> is <%=todayTemp%> ℃ </h2>
+    <h2 class="today-date">
+        <%=todayDate%>
+    </h2>
+    <h2 class="weather-report"> Weather: <%=weatherOverview%>
+    </h2>
+    <h2 class="weather-report"> Weather Description: <%=weatherDescription%>
+    </h2>
+    <div class="d-flex flex-column justify-content-center">
+        <div style="margin:auto;  font-size:30px; padding:15px">feels_like: <%=feels_like%>℃
+        </div>
+        <div style="margin:auto;  font-size:30px; padding:15px">Humidity: <%=humidity%> %
+        </div>
+        <div style="margin:auto;  font-size:30px; padding:15px">Min. Temp: <%=temp_min%> ℃
+        </div>
+        <div style="margin:auto;  font-size:30px; padding:15px">Max. Temp: <%=temp_max%> ℃
+        </div>
+    </div>
+    <div class="button-box">
+        <a href="/" role="button" class="btn btn-primary">Back</a>
+    </div>
+
+    <%-include("Footer")-%>

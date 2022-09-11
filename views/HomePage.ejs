@@ -1,0 +1,19 @@
+<%-include("Header")-%>
+    
+    <div class="d-flex flex-column justify-content-center body-container">
+        <div class="marquee-top-box">
+            <h2><marquee behavior="slide" direction="down" scrollamount="4">Welcome Home 😃</marquee></h2>
+        </div>
+        <div class="marquee-bottom-box">
+            <h2><marquee behavior="slide" direction="up">find your <span class="mood">mood</span></marquee></h2>
+        </div>
+        <div class="weather">
+            <form action="/" method="post">
+                <input type="text" name="cityName" class="input-box" placeholder="Your City name please..!" id="cityName" />
+                <br /><br />
+                <button type="submit" class="btn btn-outline-white" id="submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <%-include("Footer")-%>
