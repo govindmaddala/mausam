@@ -11,11 +11,11 @@ app.get("/", function (req, res) {
 });
 
 app.get('/articles', (req, res) => {
-    res.send('Articles Page')
+    res.send('Articles Page is under progress')
 })
 
 app.get('/contacts', (req, res) => {
-    res.send('Contacts Page')
+    res.send('Contacts Page is under progress')
 })
 
 const err = {
@@ -46,7 +46,7 @@ app.post('/', function (req, res) {
                     temp_max: weather.main.temp_max
                 })
             }
-            else if(weather.cod >= 400){
+            else if (weather.cod >= 400) {
                 res.render("ErrorPage")
             }
             else {
