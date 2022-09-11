@@ -11,17 +11,12 @@ app.get("/", function (req, res) {
 });
 
 app.get('/articles', (req, res) => {
-    res.send('Articles Page is under progress')
+    res.render("Articles")
 })
 
 app.get('/contacts', (req, res) => {
-    res.send('Contacts Page is under progress')
+    res.render("Contacts")
 })
-
-const err = {
-    "cod": "404",
-    "message": "city not found"
-}
 
 app.post('/', function (req, res) {
     const city = req.body.cityName;
